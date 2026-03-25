@@ -359,9 +359,10 @@ export const slides = [
           <motion.h2 variants={itemVariants} className="text-amber-500 font-mono text-sm tracking-widest uppercase mb-4">07 / The SaaS Model</motion.h2>
           <motion.h3 variants={itemVariants} className="text-5xl font-bold tracking-tight mb-8">Pricing & Revenue Expansion.</motion.h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
             {[
-              { name: 'Standard', price: '€150', desc: 'For independent drivers', features: ['0% Commission', 'Standard Dispatch', 'Basic Support'] },
+              { name: 'Flex', price: '€75', desc: 'For part-time/weekend drivers', features: ['0% Commission', 'Up to 50 rides/mo', 'Basic Support'] },
+              { name: 'Standard', price: '€150', desc: 'For independent drivers', features: ['0% Commission', 'Unlimited Rides', 'Standard Dispatch'] },
               { name: 'Premium', price: '€250', desc: 'For Berline/Van drivers', features: ['Priority Airport Dispatch', 'Advanced Analytics', 'Premium Rider Matching'], highlight: true },
               { name: 'Fleet', price: 'Custom', desc: 'For fleet operators', features: ['Multi-vehicle Management', 'Automated Payouts', 'Tax & Accounting API'] }
             ].map((tier, i) => (
@@ -668,11 +669,68 @@ export const slides = [
     )
   },
   {
-    id: 'acquisition',
+    id: 'driver-acquisition',
     component: () => (
       <div className="w-full h-full p-12 md:p-24 flex flex-col bg-zinc-950">
         <motion.div variants={containerVariants} initial="hidden" animate="show" className="h-full flex flex-col">
           <motion.h2 variants={itemVariants} className="text-amber-500 font-mono text-sm tracking-widest uppercase mb-4">12 / Go-To-Market</motion.h2>
+          <motion.h3 variants={itemVariants} className="text-5xl font-bold tracking-tight mb-16">Driver Acquisition: The "Multi-Apping" Exploit.</motion.h3>
+          
+          <div className="flex-1 flex flex-col lg:flex-row gap-12 items-center">
+            <motion.div variants={itemVariants} className="w-full lg:w-1/2 space-y-8">
+              <p className="text-2xl font-light text-zinc-300 leading-relaxed">
+                We don't need drivers to quit Uber or Bolt. We just need to become their <strong className="text-white font-bold">Primary App</strong>.
+              </p>
+              
+              <div className="space-y-6">
+                <div className="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6">
+                  <h4 className="text-xl font-bold text-white mb-2">The Reality of Multi-Apping</h4>
+                  <p className="text-zinc-400">Almost all 30,000+ VTC drivers in Paris run 2-3 apps simultaneously. They accept whichever ride pings first or pays best.</p>
+                </div>
+                
+                <div className="bg-amber-500/10 border border-amber-500/30 rounded-2xl p-6">
+                  <h4 className="text-xl font-bold text-amber-400 mb-2">The 0% Commission Advantage</h4>
+                  <p className="text-zinc-300">Because Équité takes 0% commission, a ride on our platform pays 15-25% more for the exact same distance. When both apps ping, <strong className="text-white">Équité always wins.</strong></p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="w-full lg:w-1/2 flex justify-center">
+              <div className="relative w-full max-w-md aspect-square">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-amber-500/20 rounded-full blur-3xl" />
+                
+                <div className="absolute top-10 left-10 bg-zinc-900 border border-zinc-700 p-4 rounded-xl shadow-2xl transform -rotate-12 opacity-50">
+                  <div className="text-zinc-500 font-bold mb-2">Uber</div>
+                  <div className="text-sm text-zinc-600">€15.00 Net</div>
+                </div>
+                
+                <div className="absolute bottom-10 right-10 bg-zinc-900 border border-emerald-900 p-4 rounded-xl shadow-2xl transform rotate-12 opacity-50">
+                  <div className="text-emerald-700 font-bold mb-2">Bolt</div>
+                  <div className="text-sm text-zinc-600">€14.50 Net</div>
+                </div>
+                
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-zinc-900 border-2 border-amber-500 p-6 rounded-2xl shadow-[0_0_50px_rgba(245,158,11,0.2)] z-10 w-64">
+                  <div className="flex justify-between items-center mb-4">
+                    <div className="text-amber-500 font-bold text-xl">{BRAND_NAME}</div>
+                    <div className="bg-amber-500/20 text-amber-500 text-xs px-2 py-1 rounded uppercase font-bold">Primary</div>
+                  </div>
+                  <div className="text-3xl text-white font-bold mb-1">€20.00 Net</div>
+                  <div className="text-sm text-zinc-400">Same distance. 0% cut.</div>
+                  <div className="mt-6 bg-amber-500 text-zinc-950 text-center py-2 rounded-lg font-bold">Accept Ride</div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
+      </div>
+    )
+  },
+  {
+    id: 'acquisition',
+    component: () => (
+      <div className="w-full h-full p-12 md:p-24 flex flex-col bg-zinc-950">
+        <motion.div variants={containerVariants} initial="hidden" animate="show" className="h-full flex flex-col">
+          <motion.h2 variants={itemVariants} className="text-amber-500 font-mono text-sm tracking-widest uppercase mb-4">13 / Go-To-Market</motion.h2>
           <motion.h3 variants={itemVariants} className="text-5xl font-bold tracking-tight mb-16">Rider Acquisition Strategy.</motion.h3>
           
           <div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -713,7 +771,7 @@ export const slides = [
       <div className="w-full h-full p-12 md:p-24 flex flex-col bg-zinc-950 justify-center">
         <motion.div variants={containerVariants} initial="hidden" animate="show" className="w-full max-w-6xl mx-auto">
           <motion.div variants={itemVariants} className="text-center mb-20">
-            <h2 className="text-amber-500 font-mono text-sm tracking-widest uppercase mb-4">13 / Execution</h2>
+            <h2 className="text-amber-500 font-mono text-sm tracking-widest uppercase mb-4">14 / Execution</h2>
             <h3 className="text-5xl font-bold tracking-tight">The Roadmap (Day 1 - Month 12).</h3>
           </motion.div>
           
@@ -743,6 +801,96 @@ export const slides = [
     )
   },
   {
+    id: 'financials',
+    component: () => {
+      const data = [
+        { year: 'Year 1', ARR: 1.2, Drivers: 1000 },
+        { year: 'Year 2', ARR: 4.5, Drivers: 3000 },
+        { year: 'Year 3', ARR: 12.0, Drivers: 8000 },
+        { year: 'Year 4', ARR: 25.0, Drivers: 15000 },
+        { year: 'Year 5', ARR: 45.0, Drivers: 25000 },
+      ];
+
+      return (
+        <div className="w-full h-full p-12 md:p-24 flex flex-col bg-zinc-950">
+          <motion.div variants={containerVariants} initial="hidden" animate="show" className="h-full flex flex-col">
+            <motion.h2 variants={itemVariants} className="text-amber-500 font-mono text-sm tracking-widest uppercase mb-4">15 / Financials</motion.h2>
+            <motion.h3 variants={itemVariants} className="text-5xl font-bold tracking-tight mb-12">5-Year Projections & Unit Economics.</motion.h3>
+            
+            <div className="flex-1 flex flex-col lg:flex-row gap-12 items-center">
+              <motion.div variants={itemVariants} className="w-full lg:w-1/2 space-y-6">
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6">
+                    <p className="text-zinc-500 text-sm uppercase tracking-wider mb-2">Driver CAC</p>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl font-bold text-white">€50</span>
+                      <span className="text-zinc-400 text-sm line-through">€150</span>
+                    </div>
+                    <p className="text-emerald-500 text-xs mt-2">↓ Decreasing via network effects</p>
+                  </div>
+                  
+                  <div className="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6">
+                    <p className="text-zinc-500 text-sm uppercase tracking-wider mb-2">Driver LTV</p>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl font-bold text-white">€1,800</span>
+                    </div>
+                    <p className="text-amber-500 text-xs mt-2">Based on 12mo retention @ €150/mo</p>
+                  </div>
+                  
+                  <div className="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6">
+                    <p className="text-zinc-500 text-sm uppercase tracking-wider mb-2">Gross Margin</p>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl font-bold text-white">85%</span>
+                    </div>
+                    <p className="text-zinc-400 text-xs mt-2">SaaS model efficiency</p>
+                  </div>
+                  
+                  <div className="bg-amber-500/10 border border-amber-500/30 rounded-2xl p-6">
+                    <p className="text-amber-500/80 text-sm uppercase tracking-wider mb-2">Profitability</p>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl font-bold text-amber-400">Month 18</span>
+                    </div>
+                    <p className="text-amber-500/80 text-xs mt-2">Cash-flow positive</p>
+                  </div>
+                </div>
+                
+                <div className="bg-zinc-900/30 border border-zinc-800/50 rounded-2xl p-6">
+                  <h4 className="text-white font-bold mb-2">The SaaS Multiplier</h4>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    Unlike traditional ride-hailing where margins are squeezed by driver incentives and rider discounts, our revenue scales linearly with driver acquisition. Fixed infrastructure costs mean margins expand significantly as we scale past 5,000 drivers.
+                  </p>
+                </div>
+              </motion.div>
+
+              <motion.div variants={itemVariants} className="w-full lg:w-1/2 h-[400px] bg-zinc-900/20 border border-zinc-800 rounded-2xl p-6">
+                <h4 className="text-zinc-300 font-medium mb-6 text-center">Projected ARR (€ Millions)</h4>
+                <ResponsiveContainer width="100%" height="85%">
+                  <AreaChart data={data} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
+                    <defs>
+                      <linearGradient id="colorARR" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="5%" stopColor="#f59e0b" stopOpacity={0.3}/>
+                        <stop offset="95%" stopColor="#f59e0b" stopOpacity={0}/>
+                      </linearGradient>
+                    </defs>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#27272a" vertical={false} />
+                    <XAxis dataKey="year" stroke="#a1a1aa" tick={{fill: '#a1a1aa'}} axisLine={false} tickLine={false} />
+                    <YAxis stroke="#a1a1aa" tick={{fill: '#a1a1aa'}} axisLine={false} tickLine={false} tickFormatter={(value) => `€${value}M`} />
+                    <RechartsTooltip 
+                      cursor={{stroke: '#27272a', strokeWidth: 2}}
+                      contentStyle={{ backgroundColor: '#18181b', border: '1px solid #27272a', borderRadius: '8px', color: '#fff' }}
+                      formatter={(value: any) => [`€${value}M`, 'ARR']}
+                    />
+                    <Area type="monotone" dataKey="ARR" stroke="#f59e0b" strokeWidth={3} fillOpacity={1} fill="url(#colorARR)" />
+                  </AreaChart>
+                </ResponsiveContainer>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      )
+    }
+  },
+  {
     id: 'funding',
     component: () => {
       const data = [
@@ -755,7 +903,7 @@ export const slides = [
       return (
         <div className="w-full h-full p-12 md:p-24 flex flex-col bg-zinc-950">
           <motion.div variants={containerVariants} initial="hidden" animate="show" className="h-full flex flex-col">
-            <motion.h2 variants={itemVariants} className="text-amber-500 font-mono text-sm tracking-widest uppercase mb-4">14 / Ask</motion.h2>
+            <motion.h2 variants={itemVariants} className="text-amber-500 font-mono text-sm tracking-widest uppercase mb-4">16 / Ask</motion.h2>
             <motion.h3 variants={itemVariants} className="text-5xl font-bold tracking-tight mb-12">Seed Funding Request.</motion.h3>
             
             <div className="flex-1 flex flex-col lg:flex-row gap-16 items-center">
@@ -834,7 +982,7 @@ export const slides = [
           animate="show"
           className="relative z-10 max-w-4xl w-full px-12 text-center"
         >
-          <motion.h2 variants={itemVariants} className="text-amber-500 font-mono text-sm tracking-widest uppercase mb-8">15 / The Vision</motion.h2>
+          <motion.h2 variants={itemVariants} className="text-amber-500 font-mono text-sm tracking-widest uppercase mb-8">17 / The Vision</motion.h2>
           
           <motion.h3 variants={itemVariants} className="text-6xl md:text-8xl font-bold tracking-tighter mb-8 text-white">
             Join the Revolution.
